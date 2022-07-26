@@ -66,6 +66,8 @@ Foi utilizado diferentes técnicas, com o objetivo de criar a API: arquiteturas 
 - abra um terminal no Vscode e execute o comando npm install para baixar as dependências usadas no projeto
 - para rodar a API use o comando nodemon index
 
+PS: Renomear o arquivo .envexemplo para .env e preencher os dados.
+
 ### POSTMAN
 
 - Para conseguir visualizar melhor os endpoints abra o POSTMAN
