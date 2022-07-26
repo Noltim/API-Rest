@@ -62,9 +62,13 @@ Foi utilizado diferentes técnicas, com o objetivo de criar a API: arquiteturas 
 ### API
 
 - Para executar a API
-- abra no vscode a pasta API
+- abra no vscode na pasta API (( para facilidade pode usar na barra de navegação o comando ' cmd ' e depois digitar ' code . '))
+- primeiro vamos renomear a pasta .env.exemplo para apenas .env e preencher os dados conforme solicitado e salvar.
 - abra um terminal no Vscode e execute o comando npm install para baixar as dependências usadas no projeto
-- para rodar a API use o comando nodemon index
+- se quiser editar a api recomendo o baixar o npm install -g nodemon e iniciar pelo comando nodemon index, mas caso não pode pular para proximo passo.
+- rode o comando  para criar o banco de dados npx sequelize-cli db:migrate
+- antes lembre de criar o banco de dados conforme o nome no doc .env
+- para rodar a API use o comando npx run index
 
 PS: Renomear o arquivo .envexemplo para .env e preencher os dados.
 
