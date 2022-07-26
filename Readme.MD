@@ -63,7 +63,8 @@ Foi utilizado diferentes técnicas, com o objetivo de criar a API: arquiteturas 
 
 - Para executar a API
 - abra no vscode a pasta API
-- abra um terminal no Vscode e execute o comando nodemon index
+- abra um terminal no Vscode e execute o comando npm install para baixar as dependências usadas no projeto
+- para rodar a API use o comando nodemon index
 
 ### POSTMAN
 

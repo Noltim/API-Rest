@@ -1,0 +1,393 @@
+{
+	"info": {
+		"_postman_id": "389a2d6c-1b5c-40fd-95ce-480f17f568da",
+		"name": "API Paciente - Consumo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20611170"
+	},
+	"item": [
+		{
+			"name": "Testes positivos",
+			"item": [
+				{
+					"name": "Cadastro paciente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Pedro\",\r\n  \"healthInsuranceCardId\": \"97987897797\",\r\n  \"address\": \"Rua Luís de Castro, \"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Pacientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar paciente por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualização de dados do paciente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"teste atualizar\",\r\n  \"healthInsuranceCardId\": \"12312322222\",\r\n  \"address\": \"Rua da atualização\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar pacientes cadastrados",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Testes negativos",
+			"item": [
+				{
+					"name": "Cadastro paciente - IdCard já existente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Pedro\",\r\n  \"healthInsuranceCardId\": \"97987897797\",\r\n  \"address\": \"Rua Luís de Castro, \"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro paciente - faltando itens na requisição",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"healthInsuranceCardId\": \"97987897797\",\r\n  \"address\": \"Rua Luís de Castro, \"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro paciente - Body vazio",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar paciente por ID - ID não encontrado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros/50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar paciente por ID - ID invalido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros/asdasdasd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros",
+								"asdasdasd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualização de dados do paciente - Cadastro não encontrado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"teste atualizar\",\r\n  \"healthInsuranceCardId\": \"12312322222\",\r\n  \"address\": \"Rua da atualização\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros/50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualização de dados do paciente -  sem body",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualização de dados do paciente -  Body vazio",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar pacientes cadastrados - ID não encontrado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros/50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar pacientes cadastrados - ID invalido",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/cadastros/adasdasd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cadastros",
+								"adasdasd"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

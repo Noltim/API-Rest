@@ -1,0 +1,166 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API",
+    "description": "A 'API' é uma API REST que simula recuperar, criar, atualizar e deletar dados de um paciente com intuito de servir de material de estudos de testes de API. \n Autor: *José Milton de Oliveira Neto*"
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/cadastros",
+  "tags": [
+    {
+      "name": "Cadastro",
+      "description": "Realizar cadastro, consultar, atualização ou deletar dados de paciente"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    },
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://petstore.swagger.io/oauth/authorize",
+      "flow": "implicit",
+      "scopes": {
+        "read_pets": "read your pets",
+        "write_pets": "modify pets in your account"
+      }
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "tags": [
+          "Cadastro"
+        ],
+        "description": "Endpoint para cadastrar um novo paciente.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Cadastro"
+        ],
+        "description": "Endpoint para listar todos os cadastros de pacientes.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/{id}": {
+      "get": {
+        "tags": [
+          "Cadastro"
+        ],
+        "description": "Endpoint para listar o cadastro de um paciente.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cadastro"
+        ],
+        "description": "Endpoint para atualizar o cadastro de um paciente.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "healthInsuranceCardId": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cadastro"
+        ],
+        "description": "Endpoint para deletar o cadastro de um paciente.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Cadastro": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Matilde Fernandes Goncalves"
+        },
+        "healthInsuranceCardId": {
+          "type": "string",
+          "example": "123456789"
+        },
+        "address": {
+          "type": "string",
+          "example": "Rua Luís de Castro, 1182"
+        }
+      }
+    }
+  }
+}
